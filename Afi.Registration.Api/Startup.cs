@@ -1,3 +1,4 @@
+using System;
 using Afi.Registration.Api.Middleware;
 using Afi.Registration.Api.Models;
 using Afi.Registration.Api.Services;
@@ -13,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerUI;
 
 namespace Afi.Registration.Api
 {
@@ -80,12 +82,22 @@ namespace Afi.Registration.Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c =>
-                    c.SwaggerEndpoint(
-                        "/swagger/v1/swagger.json",
-                        "Afi Registration Api v1"));
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint(
+                    "/swagger/v1/swagger.json",
+                    "Afi Registration Api v1");
+
+                if (env.IsProduction())
+                {
+                    // Disable all calls via UI
+                    c.SupportedSubmitMethods(Array.Empty<SubmitMethod>());
+                }
+            });
+
 
             app.UseHsts();
 
