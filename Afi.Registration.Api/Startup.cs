@@ -27,15 +27,22 @@ namespace Afi.Registration.Api
         /// Initialises a new instance of the <see cref="Startup"/> class.
         /// </summary>
         /// <param name="configuration">The configuration.</param>
-        public Startup(IConfiguration configuration)
+        /// <param name="env">The web host environment.</param>
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             Configuration = configuration;
+            Environment = env;
         }
 
         /// <summary>
         /// Gets the configuration.
         /// </summary>
         public IConfiguration Configuration { get; }
+
+        /// <summary>
+        /// Gets the web host environment.
+        /// </summary>
+        public IWebHostEnvironment Environment { get; }
 
         /// <summary>
         /// Called by the runtime to add services to the container.
@@ -53,9 +60,19 @@ namespace Afi.Registration.Api
                 Version = "v1"
             }));
 
-            services.AddDbContext<AfiDbContext>(
-                options => options.UseSqlite(
-                    Configuration.GetConnectionString("AfiDbConnection")));
+            var connectionString = Configuration.GetConnectionString(
+                "AfiDbConnection");
+            services.AddDbContext<AfiDbContext>(options =>
+            {
+                if (Environment.IsDevelopment())
+                {
+                    options.UseSqlite(connectionString);
+                }
+                else
+                {
+                    options.UseSqlServer(connectionString);
+                }
+            });
 
             services.AddTransient<
                 IItemValidator<CustomerRegistrationRequest>,
