@@ -9,6 +9,18 @@
     <Description>Logic for customer registration.</Description>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>Afi.Registration.Domain.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>Afi.Registration.Domain.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Afi.Registration.Domain.xml" />
+  </ItemGroup>
+
   <ItemGroup>
     <GlobalAnalyzerConfigFiles Include="..\.analyzerconfig" Link=".analyzerconfig" />
   </ItemGroup>
