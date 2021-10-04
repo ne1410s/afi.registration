@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Xml documentation (build output)
+Afi.Registration.*/Afi.Registration.*.[Xx]ml
+
 # User-specific files
 *.rsuser
 *.suo
