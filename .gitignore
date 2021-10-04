@@ -6,6 +6,9 @@
 # Xml documentation (build output)
 Afi.Registration.*/Afi.Registration.*.[Xx]ml
 
+# Coverlet generated reports
+coveragereport/
+
 # User-specific files
 *.rsuser
 *.suo

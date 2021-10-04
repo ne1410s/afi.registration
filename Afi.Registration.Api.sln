@@ -9,18 +9,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.analyzerconfig = .analyzerconfig
 		.gitignore = .gitignore
+		coverlet.runsettings = coverlet.runsettings
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afi.Registration.Domain", "Afi.Registration.Domain\Afi.Registration.Domain.csproj", "{A6F8AAC0-4AC9-4D04-805D-9E2D2A63AAA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Afi.Registration.Domain", "Afi.Registration.Domain\Afi.Registration.Domain.csproj", "{A6F8AAC0-4AC9-4D04-805D-9E2D2A63AAA0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{D2F7ED58-095D-476F-988C-2D3F30210C1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afi.Registration.UnitTests", "Afi.Registration.UnitTests\Afi.Registration.UnitTests.csproj", "{7A4EF4A7-1D20-46E9-BA0E-CB071BE1C592}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Afi.Registration.UnitTests", "Afi.Registration.UnitTests\Afi.Registration.UnitTests.csproj", "{7A4EF4A7-1D20-46E9-BA0E-CB071BE1C592}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afi.Registration.IntegrationTests", "Afi.Registration.IntegrationTests\Afi.Registration.IntegrationTests.csproj", "{C79F3E31-9062-4189-B125-16367BFFD7E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Afi.Registration.IntegrationTests", "Afi.Registration.IntegrationTests\Afi.Registration.IntegrationTests.csproj", "{C79F3E31-9062-4189-B125-16367BFFD7E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afi.Registration.Persistence", "Afi.Registration.Persistence\Afi.Registration.Persistence.csproj", "{1581AA50-158D-42EF-A792-D245EAC00C84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Afi.Registration.Persistence", "Afi.Registration.Persistence\Afi.Registration.Persistence.csproj", "{1581AA50-158D-42EF-A792-D245EAC00C84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
