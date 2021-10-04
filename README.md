@@ -1,3 +1,5 @@
+[![Build Status](https://app.travis-ci.com/ne1410s/afi.registration.svg?branch=main)](https://app.travis-ci.com/ne1410s/afi.registration)
+
 ## Test Coverage
 ```powershell
 # obtain coverlet test coverage results

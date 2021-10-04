@@ -1,0 +1,7 @@
+language: csharp
+mono: none
+dotnet: 5.0.401
+solution: Afi.Registration.sln
+script:
+ - dotnet restore
+ - dotnet test --collect:"XPlat Code Coverage" --settings coverlet.runsettings
