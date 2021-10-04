@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -6,19 +6,19 @@
     <Authors>Afi Development Team</Authors>
     <Company>Afi Ltd.</Company>
     <Product>Afi Registration Api</Product>
-    <Description>Api for customer registration.</Description>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>Afi.Registration.Api.xml</DocumentationFile>
+    <Description>Persistence for customer registration.</Description>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>Afi.Registration.Api.xml</DocumentationFile>
+    <DocumentationFile>Afi.Registration.Persistence.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>Afi.Registration.Persistence.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Afi.Registration.Api.xml" />
+    <None Remove="Afi.Registration.Persistence.xml" />
   </ItemGroup>
   
   <ItemGroup>
@@ -26,11 +26,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.10">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.10" />
     <PackageReference Include="Roslynator.Analyzers" Version="3.2.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -43,12 +39,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.2" />
   </ItemGroup>
   
   <ItemGroup>
     <ProjectReference Include="..\Afi.Registration.Domain\Afi.Registration.Domain.csproj" />
-    <ProjectReference Include="..\Afi.Registration.Persistence\Afi.Registration.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

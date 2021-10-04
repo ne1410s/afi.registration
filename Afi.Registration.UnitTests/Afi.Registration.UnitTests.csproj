@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Afi.Registration.Api\Afi.Registration.Api.csproj" />
+    <ProjectReference Include="..\Afi.Registration.Persistence\Afi.Registration.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

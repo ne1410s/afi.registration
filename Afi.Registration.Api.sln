@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afi.Registration.UnitTests"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afi.Registration.IntegrationTests", "Afi.Registration.IntegrationTests\Afi.Registration.IntegrationTests.csproj", "{C79F3E31-9062-4189-B125-16367BFFD7E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afi.Registration.Persistence", "Afi.Registration.Persistence\Afi.Registration.Persistence.csproj", "{1581AA50-158D-42EF-A792-D245EAC00C84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 		{C79F3E31-9062-4189-B125-16367BFFD7E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C79F3E31-9062-4189-B125-16367BFFD7E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C79F3E31-9062-4189-B125-16367BFFD7E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1581AA50-158D-42EF-A792-D245EAC00C84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1581AA50-158D-42EF-A792-D245EAC00C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1581AA50-158D-42EF-A792-D245EAC00C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1581AA50-158D-42EF-A792-D245EAC00C84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

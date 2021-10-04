@@ -2,9 +2,13 @@ using Afi.Registration.Api.Middleware;
 using Afi.Registration.Api.Models;
 using Afi.Registration.Api.Services;
 using Afi.Registration.Domain.Models;
+using Afi.Registration.Domain.Repositories;
 using Afi.Registration.Domain.Services;
+using Afi.Registration.Persistence;
+using Afi.Registration.Persistence.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -47,6 +51,10 @@ namespace Afi.Registration.Api
                 Version = "v1"
             }));
 
+            services.AddDbContext<AfiDbContext>(
+                options => options.UseSqlite(
+                    Configuration.GetConnectionString("AfiDbConnection")));
+
             services.AddTransient<
                 IItemValidator<CustomerRegistrationRequest>,
                 RegistrationRequestValidator>();
@@ -56,6 +64,10 @@ namespace Afi.Registration.Api
             services.AddTransient<
                 ICustomerRequestMapper,
                 CustomerRequestMapper>();
+
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<IPolicyRepository, PolicyRepository>();
+            services.AddTransient<ICustomerRegistrar, CustomerRegistrar>();
         }
 
         /// <summary>
