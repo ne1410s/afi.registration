@@ -5,8 +5,12 @@ namespace Afi.Registration.Domain.Repositories
 {
     public interface ICustomerRepository
     {
-        public Task<Customer?> FindAsync(Customer customer, string policyReference);
+        public Task<Customer?> FindAsync(
+            Customer customer,
+            string policyReference);
 
-        public Task<long> AddToPolicyAsync(Customer customer, string policyReference);
+        public Task<long> AddToPolicyAsync(
+            Customer customer,
+            string policyReference);
     }
 }

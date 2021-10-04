@@ -5,6 +5,8 @@ namespace Afi.Registration.Domain.Services
 {
     public interface ICustomerRegistrar
     {
-        public Task<long> RegisterAsync(Customer customer, string policyReference);
+        public Task<long> RegisterAsync(
+            Customer customer,
+            string policyReference);
     }
 }
