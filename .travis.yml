@@ -1,0 +1,7 @@
+language: csharp
+mono: none
+dotnet: 5.0.401
+solution: Peccadillo.sln
+script:
+ - dotnet restore
+ - dotnet test --collect:"XPlat Code Coverage"
