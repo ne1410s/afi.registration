@@ -20,12 +20,17 @@
   <ItemGroup>
     <None Remove="Afi.Registration.Api.xml" />
   </ItemGroup>
-
+  
   <ItemGroup>
     <GlobalAnalyzerConfigFiles Include="..\.analyzerconfig" Link=".analyzerconfig" />
   </ItemGroup>
-
+  
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.10" />
     <PackageReference Include="Roslynator.Analyzers" Version="3.2.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -38,8 +43,9 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.2" />
   </ItemGroup>
-
+  
   <ItemGroup>
     <ProjectReference Include="..\Afi.Registration.Domain\Afi.Registration.Domain.csproj" />
   </ItemGroup>

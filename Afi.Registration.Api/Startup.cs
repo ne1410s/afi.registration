@@ -1,9 +1,14 @@
 using Afi.Registration.Api.Middleware;
+using Afi.Registration.Api.Models;
+using Afi.Registration.Api.Services;
+using Afi.Registration.Domain.Models;
+using Afi.Registration.Domain.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace Afi.Registration.Api
 {
@@ -35,6 +40,22 @@ namespace Afi.Registration.Api
             services.AddControllers()
                 .AddJsonOptions(options =>
                     options.JsonSerializerOptions.IgnoreNullValues = true);
+
+            services.AddSwaggerGen(c => c.SwaggerDoc("v1", new OpenApiInfo
+            {
+                Title = "Afi Registration Api",
+                Version = "v1"
+            }));
+
+            services.AddTransient<
+                IItemValidator<CustomerRegistrationRequest>,
+                RegistrationRequestValidator>();
+            services.AddTransient<
+                IItemValidator<Customer>,
+                CustomerValidator>();
+            services.AddTransient<
+                ICustomerRequestMapper,
+                CustomerRequestMapper>();
         }
 
         /// <summary>
@@ -47,6 +68,11 @@ namespace Afi.Registration.Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                    c.SwaggerEndpoint(
+                        "/swagger/v1/swagger.json",
+                        "Afi Registration Api v1"));
             }
 
             app.UseHsts();
