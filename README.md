@@ -1,6 +1,5 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/1f1959d4a297433fb4ab7d2d177a82c8)](https://www.codacy.com/gh/ne1410s/afi.registration/dashboard)
 [![Build Status](https://app.travis-ci.com/ne1410s/afi.registration.svg?branch=main)](https://app.travis-ci.com/ne1410s/afi.registration)
-[![Coverage Status](https://coveralls.io/repos/github/ne1410s/afi.registration/badge.svg?branch=main)](https://coveralls.io/github/ne1410s/afi.registration?branch=main)
 
 ## Endpoint location
 An endpoint is published [here](https://dev-registrationapp-afidemo-uks.azurewebsites.net/swagger/index.html).
