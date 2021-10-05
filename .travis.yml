@@ -8,10 +8,10 @@ branches:
     - main
 before_script:
   - export PATH=$PATH:/$HOME/.dotnet/tools
-  - export PATH=$PATH:/$HOME/.nuget/packages/coveralls.io/1.4.2/tools
 script:
   - dotnet restore
   - dotnet test --settings coverlet.runsettings
   - dotnet tool install -g dotnet-reportgenerator-globaltool
-  - reportgenerator -targetdir:coveragereport -reports:**/coverage.cobertura.xml -reporttypes:"html;htmlsummary;cobertura" 
-  - coveralls.net --cobertura coveragereport/Cobertura.xml -r $COVERALLS_REPO_TOKEN
+  - dotnet tool install -g coveralls.net
+  - reportgenerator -targetdir:coveragereport -reports:**/coverage.cobertura.xml -reporttypes:"html;htmlsummary;lcov" 
+  - csmacnz.Coveralls --lcov -i coveragereport/lcov.info --repoToken $COVERALLS_REPO_TOKEN --commitId $TRAVIS_COMMIT --commitBranch main
