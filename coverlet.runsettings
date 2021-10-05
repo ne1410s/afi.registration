@@ -4,7 +4,8 @@
     <DataCollectors>
       <DataCollector friendlyName="XPlat code coverage">
          <Configuration>
-          <Format>cobertura,opencover</Format>
+          <Format>cobertura</Format>
+          <ExcludeByFile>**/Migrations/**/*,**/*.Domain/Errors/**.*</ExcludeByFile>
           <IncludeTestAssembly>true</IncludeTestAssembly>
           <SkipAutoProps>true</SkipAutoProps>
         </Configuration>

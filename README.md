@@ -1,6 +1,10 @@
 [![Build Status](https://app.travis-ci.com/ne1410s/afi.registration.svg?branch=main)](https://app.travis-ci.com/ne1410s/afi.registration)
 [![Coverage Status](https://coveralls.io/repos/github/ne1410s/afi.registration/badge.svg?branch=main)](https://coveralls.io/github/ne1410s/afi.registration?branch=main)
 
+## Endpoint location
+An endpoint is published [here](https://dev-registrationapp-afidemo-uks.azurewebsites.net/swagger/index.html)
+Policies AA-000001 to AA-001000 are available for demo
+
 ## Test Coverage
 ```powershell
 # obtain coverlet test coverage results
@@ -16,6 +20,9 @@ reportgenerator -targetdir:coveragereport -reports:**/coverage.cobertura.xml -re
 # add a new migration
 # PREREQ> dotnet tool install -g dotnet-ef
 dotnet ef migrations add <MigrationName> -p Afi.Registration.Persistence -s Afi.Registration.Api
+
+# obtains a script for production / SQL Server
+$env:ASPNETCORE_ENVIRONMENT="Production";dotnet ef dbcontext script -p Afi.Registration.Persistence -s Afi.Registration.Api
 ```
 
 ## IaC
