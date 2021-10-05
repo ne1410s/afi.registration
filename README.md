@@ -8,7 +8,7 @@ Policies AA-000001 to AA-001000 are available for demo
 ## Test Coverage
 ```powershell
 # obtain coverlet test coverage results
-dotnet test --collect:"XPlat Code Coverage" --settings coverlet.runsettings
+dotnet test --settings coverlet.runsettings
 
 # generate html summary report from coverlet coverage results
 # PREREQ> dotnet tool install -g dotnet-reportgenerator-globaltool
